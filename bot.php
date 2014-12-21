@@ -36,7 +36,7 @@
 			<h1><span>Log:</span></h1>
 
 			<?php
-			    $log = shell_exec("exec tail bot_log.out");
+			    $log = shell_exec("exec tail -n 20 bot_log.out");
 			    echo nl2br($log);
 			?>
 		</div>
