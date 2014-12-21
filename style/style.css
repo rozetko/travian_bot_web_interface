@@ -1,0 +1,9 @@
+#config {
+	float: left; 
+	width: 40%;
+}
+
+#log {
+	float: right; 
+	width: 60%;
+}
