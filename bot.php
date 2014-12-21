@@ -5,6 +5,18 @@
 		<link rel='stylesheet' type='text/css' href='style/style.css'/>
 		<script type='text/javascript' src='js/ajax.js'></script>
 
+		<script type="text/javascript">
+			window.onload = {
+				setInterval(function() {
+					getUrl('ajax.php?log', updateLog);
+				}, 2000);
+			};
+
+			function updateLog(status, headers, responseText) {
+				document.getElementById('log').value = responseText;
+			};
+		</script>
+
 		<title>Travian bot</title>
 	</head>
 	<body>
@@ -32,13 +44,11 @@
 			</form>
 		</div>
 
-		<div id='log'>
+		<div id='logContainer'>
 			<h1><span>Log:</span></h1>
 
-			<?php
-			    $log = shell_exec("exec tail -n 20 bot_log.out");
-			    echo nl2br($log);
-			?>
+			<div id='log'>
+			</div>
 		</div>
 	</body>
 </html>

@@ -15,7 +15,7 @@ function getXmlHttp(){
 
 function getUrl(url, cb) {
     var xmlhttp = getXmlHttp();
-    xmlhttp.open("GET", url+'?r='+Math.random());
+    xmlhttp.open("GET", url + '?r='+Math.random());
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4) {
             cb(

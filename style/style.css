@@ -15,7 +15,7 @@ div h1 span {
 	width: 39%;
 }
 
-#log {
+#logContainer {
 	border: 1px solid #000;
 	float: right; 
 	width: 60%;
