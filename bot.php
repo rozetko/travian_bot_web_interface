@@ -3,7 +3,7 @@
 	<head>
 		<meta http-equiv="content-type" content="text/html; charset=utf-8" />
 		<link rel='stylesheet' type='text/css' href='style/style.css'/>
-		<script type='text/javascript' src='js/ajax.js' />
+		<script type='text/javascript' src='js/ajax.js'></script>
 
 		<title>Travian bot</title>
 	</head>
