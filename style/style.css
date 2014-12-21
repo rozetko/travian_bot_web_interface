@@ -1,3 +1,19 @@
+div {
+    border: 1px solid #000;
+}
+
+div h1 {
+    text-align: center;
+    margin-top: -10px;
+    height: 20px;
+    line-height: 20px;
+    font-size: 15px;
+}
+
+div h1 span {
+    background-color: white;
+}
+
 #config {
 	float: left; 
 	width: 40%;
