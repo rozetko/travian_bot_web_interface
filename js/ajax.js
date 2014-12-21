@@ -18,6 +18,7 @@ function getUrl(url, cb) {
     xmlhttp.open("GET", url + '?r='+Math.random());
     xmlhttp.onreadystatechange = function() {
         if (xmlhttp.readyState == 4) {
+            alert(xmlhttp.responseText);
             cb(
 	            xmlhttp.status,
 	            xmlhttp.getAllResponseHeaders(),

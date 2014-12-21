@@ -6,22 +6,16 @@
 		<script type='text/javascript' src='js/ajax.js'></script>
 
 		<script type="text/javascript">
-			window.onload = {
-				setInterval(function() {
-					getUrl('ajax.php?log', updateLog);
-				}, 2000);
-			};
-
 			function updateLog(status, headers, responseText) {
-				document.getElementById('log').value = responseText;
+				document.getElementById('log').innerHTML = responseText;
 			};
 		</script>
 
 		<title>Travian bot</title>
 	</head>
-	<body>
+	<body onload='(function() {getUrl("ajax.php?log=1", updateLog); setTimeout(arguments.callee, 2000)})();'>
 		<div id='config'>
-			<form action='config.php' method='POST'>
+			<form action='bot.php' method='POST'>
 				<?php 
 					$saved = False;
 					$fileName = "salik.json";
