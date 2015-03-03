@@ -45,6 +45,10 @@
 		));
 	}
 
+	function customSort($a, $b) {
+		return $a['village'] > $b['village'];
+	}
+
 	if (isset($_GET["bot"])) {
 		$filename = "bot/salik.json";
 
@@ -114,6 +118,8 @@
 					'crop' => $_POST['crop'][$i]? 1: 0,
 				);
 			}
+
+			usort($config['build']['buildingList'], 'customSort');
 
 			saveConfig($filename, $config);
 		}
