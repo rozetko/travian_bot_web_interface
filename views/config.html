@@ -1,0 +1,61 @@
+<div class='input'>
+	Server:<br>
+	<input type='text' name='server' value='{{ server }}'/>
+</div>
+<div class='input'>
+	Login:<br>
+	<input type='text' name='username' value='{{ username }}'/>
+</div>
+<div class='input'>
+	Password:<br>
+	<input type='password' name='password' value='{{ password }}'/>
+</div>
+
+<div class='input'>
+	Adventures:
+	<input name='adventures' type='checkbox' 
+		{% if adventures %}
+			checked
+		{% endif %}
+	/>
+</div>
+<div class='input'>
+	Build:
+	<input name='build' type='checkbox'  
+		{% if build %}
+			checked
+		{% endif %}
+	/>
+</div>
+
+<div id='build'>
+	Delay:
+	<input type='number' name='build_delay' min='1' max='999' value='{{ build_delay }}'>
+	
+	<table id='buildings'>
+		{% include "buildings.html" %}
+	</table>
+
+	<a class='save' id='add_row_button' href='#add_row_button' onclick='addRow();'><img id='add_sign' src='img/add_sign.png'></a>
+
+	<!-- Progress: -->
+	<div id='adding_row'>
+		<div class='f_circleG' id='frotateG_01'>
+		</div>
+		<div class='f_circleG' id='frotateG_02'>
+		</div>
+		<div class='f_circleG' id='frotateG_03'>
+		</div>
+		<div class='f_circleG' id='frotateG_04'>
+		</div>
+		<div class='f_circleG' id='frotateG_05'>
+		</div>
+		<div class='f_circleG' id='frotateG_06'>
+		</div>
+		<div class='f_circleG' id='frotateG_07'>
+		</div>
+		<div class='f_circleG' id='frotateG_08'>
+		</div>
+	</div>
+	
+</div>

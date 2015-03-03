@@ -1,0 +1,65 @@
+<tr class='building' id='row_{{ loop.index? loop.index: row_number }}'>				
+	<td>
+		<input type='number' min='1' max='99' name='village[{{ loop.index? loop.index: row_number }}]' value='{{ building['village'] | default(1) }}'/>
+	</td>
+	<td>
+		<div>
+			<input class='resources' type='checkbox' name='resources[{{ loop.index? loop.index: row_number }}]' 
+				{% if not building['fieldId'] %}
+					checked
+				{% endif %}
+			/>
+		</div>
+
+		<div id='res_{{ loop.index? loop.index: row_number }}'
+			{% if building['fieldId'] %}
+				style='display: none'
+			{% endif %}
+		>
+			<div>
+			<img src='img/r1.gif'><input type='checkbox' name='wood[{{ loop.index? loop.index: row_number }}]' 
+				{% if building['wood'] %}
+					checked
+				{% endif %}
+			/>
+			</div>
+			<div>
+			<img src='img/r2.gif'><input type='checkbox' name='clay[{{ loop.index? loop.index: row_number }}]' 
+				{% if building['clay'] %}
+					checked
+				{% endif %}
+			/>
+			</div>
+			<div>
+			<img src='img/r3.gif'><input type='checkbox' name='iron[{{ loop.index? loop.index: row_number }}]' 
+				{% if building['iron'] %}
+					checked
+				{% endif %}
+			/>
+			</div>
+			<div>
+			<img src='img/r4.gif'><input type='checkbox' name='crop[{{ loop.index? loop.index: row_number }}]' 
+				{% if building['crop'] %}
+					checked
+				{% endif %}
+			/>
+			</div>
+		</div>
+	</td>
+	<td>
+		<input class='field_id' type='number' min='1' max='40' name='field_id[{{ loop.index? loop.index: row_number }}]' value='{{ building['fieldId'] | default(1) }}' />
+	</td>
+	<td>
+		<input type='number' min='1' max='20' name='to[{{ loop.index? loop.index: row_number }}]' value='{{ building['to'] | default("") }}'/>
+	</td>
+	<td>
+		<input type='checkbox' name='skip[{{ loop.index? loop.index: row_number }}]'
+			{% if building['skip'] %}
+				checked
+			{% endif %}
+		/>
+	</td>
+	<td>
+		<a class='save' href='#row_{{ loop.index? loop.index: row_number }}' onclick='removeRow({{ loop.index? loop.index: row_number }});' alt='Remove'><img class='remove_sign' src='img/remove_sign.png'></a>
+	</td>
+</tr>

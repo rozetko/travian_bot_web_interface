@@ -1,3 +1,9 @@
+a:hover, a:visited, a:link, a:active
+{
+    text-decoration: none;
+    color: #99C01A;
+}
+
 div h1 {
     text-align: center;
     margin-top: -10px;
@@ -10,13 +16,92 @@ div h1 span {
     background-color: white;
 }
 
-#config {
-	float: left; 
-	width: 39%;
+#right {
+    float: right; 
+    width: 54%;
 }
 
-#logContainer {
+#left {
+    float: left; 
+    width: 46%;
+}
+
+#log_container {
 	border: 1px solid #000;
-	float: right; 
-	width: 60%;
+    margin-top: 2px;
+}
+
+#status_text {
+    margin-left: 10px;
+}
+
+input[type=number] {
+    width: 3em;
+}
+
+.remove_sign {
+    width: 20px;
+    height: 20px;
+}
+
+#add_sign {
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+}
+
+#buildings {
+    border-collapse: collapse;
+    margin-top: 15px;
+}
+
+#build {
+    margin-top: 15px;
+}
+
+input[name='server'], input[name='username'], input[name='password'] {
+    margin-top: 5px;
+}
+
+.input {
+    margin-bottom: 15px;
+}
+
+.building {
+    border: 1px solid rgba(153, 192, 26, .3);
+    border-width: 1px 0;
+    border-top: none;
+}
+
+.building > td {
+    padding-top: 5px;
+    padding-bottom: 5px;
+}
+
+#config_saved {
+    display: none;
+}
+
+#config_changed {
+    display: none;
+}
+
+#controls {
+    display: none;
+}
+
+#adding_row {
+    display: none;
+}
+
+#status {
+    display: none;
+    float: left;
+    background-color: red;
+    width: 5px;
+    height: 5px;
+    border-radius: 50%;
+    -moz-border-radius: 50%;
+    -webkit-border-radius: 50%;
+    border: 1px solid #000;
 }

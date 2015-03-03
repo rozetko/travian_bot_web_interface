@@ -1,0 +1,50 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<meta http-equiv='content-type' content='text/html; charset=utf-8' />
+		<link rel='shortcut icon' href='img/favicon.ico' />
+
+		<link rel='stylesheet' type='text/css' href='style/style.css'/>
+		<link rel='stylesheet' type='text/css' href='style/progress.css'/>
+
+		<script src="js/jquery-1.11.2.min.js"></script>
+		<script src='js/ajax.js'></script>
+		<script src='js/script.js'></script>
+
+		<title>Travian bot</title>
+	</head>
+	<body>
+		<div id='left'>
+			<div id='config_changed'>
+				<a href='#' onclick='ajaxSaveConfig();'>Save</a> | 
+				<a href='#' onclick='ajaxUpdateConfig();'>Reset</a>
+				<div id='config_saved'>Config successfully saved</div>
+			</div>
+			<form id='config_container'>
+				{% include "config.html" %}
+			</form>
+		</div>
+		<div id='right'>
+			<div id='status_container'>
+				<div id='status'></div>
+				<div id='status_text'></div>
+				<div id='controls'>
+					<div id='offline_controls'>
+						<a href="#" onclick='ajaxStartBot();'>Start</a>
+					</div>
+					<div id='online_controls'>
+						<a href="#" onclick='ajaxStopBot();'>Stop</a> | 
+						<a href="#" id='pause' onclick='ajaxPauseBot();'>Pause</a>
+						<a href="#" id='unpause' onclick='ajaxUnpauseBot();'>Unpause</a>
+					</div>
+				</div>
+			</div>
+			<div id='log_container'>
+				<h1><span>Log:</span></h1>
+				<div id='log'>
+					Loading...
+				</div>
+			</div>
+		</div>
+	</body>
+</html>
