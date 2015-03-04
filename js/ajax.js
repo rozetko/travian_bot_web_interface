@@ -29,8 +29,7 @@ function update(responseText) {
 
         switch (response['status']) {
             case "1":
-                $('#status').css('backgroundColor', '#00FF00');
-                $('#status_text').html('Online');
+                $('#status').attr('src', 'img/online.png');
 
                 $('#unpause').hide();
                 $('#pause').show();
@@ -40,16 +39,14 @@ function update(responseText) {
                 break;
 
             case "0":
-                $('#status').css('backgroundColor', '#FF3030');
-                $('#status_text').html('Offline');
+                $('#status').attr('src', 'img/offline.png');
 
                 $('#offline_controls').show();
                 $('#online_controls').hide();
                 break;
 
             case "-1":
-                $('#status').css('backgroundColor', '#FFFF33');
-                $('#status_text').html('Paused');
+                $('#status').attr('src', 'img/paused.png');
 
                 $('#unpause').show();
                 $('#pause').hide();

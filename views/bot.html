@@ -14,8 +14,18 @@
 		<title>Travian bot</title>
 	</head>
 	<body>
-		<div id='header'>
-			1
+		<div id='menu'>
+			<img id='status' src='img/status.png'>
+			<div id='controls'>
+				<div id='offline_controls'>
+					<a href="#" onclick='ajaxStartBot();'><img class="menu" src="img/start.png"></a>
+				</div>
+				<div id='online_controls'>
+					<a href="#" onclick='ajaxStopBot();'><img class="menu" src="img/stop.png"></a>
+					<a href="#" id='pause' onclick='ajaxPauseBot();'><img class="menu" src="img/pause.png"></a>
+					<a href="#" id='unpause' onclick='ajaxUnpauseBot();'><img class="menu" src="img/start.png"></a>
+				</div>
+			</div>
 		</div>
 		<div id='main'>
 			<div id='left'>
@@ -30,20 +40,6 @@
 				</form>
 			</div>
 			<div id='right'>
-				<div id='status_container'>
-					<div id='status'></div>
-					<div id='status_text'></div>
-					<div id='controls'>
-						<div id='offline_controls'>
-							<a href="#" onclick='ajaxStartBot();'>Start</a>
-						</div>
-						<div id='online_controls'>
-							<a href="#" onclick='ajaxStopBot();'>Stop</a> | 
-							<a href="#" id='pause' onclick='ajaxPauseBot();'>Pause</a>
-							<a href="#" id='unpause' onclick='ajaxUnpauseBot();'>Unpause</a>
-						</div>
-					</div>
-				</div>
 				<div id='log_container'>
 					<h1><span>Log:</span></h1>
 					<div id='log'>
