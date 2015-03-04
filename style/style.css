@@ -27,8 +27,9 @@ div h1 span {
 }
 
 #log_container {
-	border: 1px solid #000;
+	border: 1px solid #C9C9C9;
     margin-top: 2px;
+    padding-left: 2px;
 }
 
 #status_text {
@@ -51,8 +52,20 @@ input[type=number] {
 }
 
 #buildings {
+    empty-cells: show;
     border-collapse: collapse;
+    text-align: center;
     margin-top: 15px;
+}
+
+.building > td:not(.remove) {
+    border: 1px solid #C9C9C9;
+    padding: 7px 5px 7px 5px;
+}
+
+.remove {
+    padding-left: 5px;
+    padding-top: 7px;
 }
 
 #build {
@@ -65,17 +78,6 @@ input[name='server'], input[name='username'], input[name='password'] {
 
 .input {
     margin-bottom: 15px;
-}
-
-.building {
-    border: 1px solid rgba(153, 192, 26, .3);
-    border-width: 1px 0;
-    border-top: none;
-}
-
-.building > td {
-    padding-top: 5px;
-    padding-bottom: 5px;
 }
 
 #config_saved {
@@ -104,4 +106,24 @@ input[name='server'], input[name='username'], input[name='password'] {
     -moz-border-radius: 50%;
     -webkit-border-radius: 50%;
     border: 1px solid #000;
+}
+
+#header {
+    background-color: #C9C9C9;
+    position: fixed;
+    width: 100%;
+    height: 50px;
+    text-align: center;
+    margin-top: -60px;
+    margin-bottom: 10px;
+    padding: 0;
+}
+
+body {
+    margin: 0;
+    padding: 0;
+}
+
+#main {
+    margin-top: 60px; 
 }

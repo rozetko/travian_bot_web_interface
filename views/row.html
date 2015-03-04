@@ -59,7 +59,7 @@
 			{% endif %}
 		/>
 	</td>
-	<td>
-		<a class='save' href='#row_{{ loop.index? loop.index: row_number }}' onclick='removeRow({{ loop.index? loop.index: row_number }});' alt='Remove'><img class='remove_sign' src='img/remove_sign.png'></a>
+	<td class='remove'>
+		<a class='change' href='#row_{{ loop.index? loop.index: row_number }}' onclick='removeRow({{ loop.index? loop.index: row_number }});' alt='Remove'><img class='remove_sign' src='img/remove_sign.png'></a>
 	</td>
 </tr>

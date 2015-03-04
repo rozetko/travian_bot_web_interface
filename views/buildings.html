@@ -1,13 +1,36 @@
-<tr>
-	<td>Village</td>
-	<td>Resources</td>
-	<td>Field ID</td>
-	<td>To</td>
-	<td>Skip</td>
-	<td></td>
-	<td></td>
-</tr>
+<table id='buildings'>
+	<tr class="building">
+		<td>Village</td>
+		<td>Resources</td>
+		<td>Field ID</td>
+		<td>To</td>
+		<td>Skip</td>
+		<td class="remove"></td>
+	</tr>
 
-{% for building in buildings %}
-	{% include "row.html" %}
-{% endfor %}
+	{% for building in buildings %}
+		{% include "row.html" %}
+	{% endfor %}
+</table>
+
+<a class='change' id='add_row_button' href='#add_row_button' onclick='addRow();'><img id='add_sign' src='img/add_sign.png'></a>
+
+<!-- Progress: -->
+<div id='adding_row'>
+	<div class='f_circleG' id='frotateG_01'>
+	</div>
+	<div class='f_circleG' id='frotateG_02'>
+	</div>
+	<div class='f_circleG' id='frotateG_03'>
+	</div>
+	<div class='f_circleG' id='frotateG_04'>
+	</div>
+	<div class='f_circleG' id='frotateG_05'>
+	</div>
+	<div class='f_circleG' id='frotateG_06'>
+	</div>
+	<div class='f_circleG' id='frotateG_07'>
+	</div>
+	<div class='f_circleG' id='frotateG_08'>
+	</div>
+</div>

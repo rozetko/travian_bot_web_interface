@@ -8,7 +8,7 @@ String.prototype.format = function() {
 	});
 };
 
-function showSaveButton() {
+function showConfigChanged() {
 	$('#config_changed').show(1000);
 };
 
@@ -34,6 +34,7 @@ function removeRow(i) {
 };
 
 $(function() {
+	$('#log_container').hide();
 
 	localStorage.setItem('status', null);
 	localStorage.setItem('log_hash', null);
@@ -81,8 +82,8 @@ $(function() {
 		}
 	});
 
-	$(document).on('change', '#config_container input', showSaveButton);
-	$(document).on('click', '.save', showSaveButton);
+	$(document).on('change', '#config_container input', showConfigChanged);
+	$(document).on('click', '.change', showConfigChanged);
 
 	ajaxUpdate();
 });
