@@ -1,3 +1,5 @@
+var undefinedStatus;
+
 String.prototype.format = function() {
 	var args = arguments;
 	return this.replace(/{(\d+)}/g, function(match, number) { 
@@ -8,8 +10,20 @@ String.prototype.format = function() {
 	});
 };
 
+function clearStatus() {
+	undefinedStatus = setInterval(function() {
+		if ($('#status_image').attr('class') == 'undefined') {
+			$('#status_image').attr('class', 'paused');
+		}
+		else {
+			$('#status_image').attr('class', 'undefined');
+		}
+	}, 750);
+};
+
 function showConfigChanged() {
-	$('#config_changed').show(1000);
+	$('#save').attr('class', 'menu');
+	$('#undo').attr('class', 'menu');
 };
 
 function addRow() {
@@ -33,11 +47,61 @@ function removeRow(i) {
 	$('#row_{0}'.format(i)).remove();
 };
 
-$(function() {
-	$('#log_container').hide();
+function setStatus(status) {
+	var statusImage = $('#status > img');
 
+    switch (status) {
+        case "1":
+        	clearInterval(undefinedStatus);
+
+            $('#status_image').attr('class', 'online');
+
+            $('#start').hide();
+            $('#pause').attr('class', 'menu').show();
+            $('#unpause').hide();
+            $('#stop').attr('class', 'menu');
+            break;
+
+        case "0":
+        	clearInterval(undefinedStatus);
+            $('#status_image').attr('class', 'offline');
+
+            $('#start').attr('class', 'menu').show();
+            $('#pause').hide();
+            $('#unpause').hide();
+            $('#stop').attr('class', 'menu inactive');
+            break;
+
+        case "-1":
+        	clearInterval(undefinedStatus);
+            $('#status_image').attr('class', 'paused');
+
+            $('#start').hide();
+            $('#pause').hide();
+            $('#unpause').attr('class', 'menu').show();
+            $('#stop').attr('class', 'menu');
+            break;
+
+        case "undefined":
+        	clearStatus();
+
+        	$('#start').attr('class', 'menu inactive');
+            $('#pause').attr('class', 'menu inactive');
+            $('#unpause').attr('class', 'menu inactive');
+            $('#stop').attr('class', 'menu inactive');
+
+        	break;
+    }
+};
+
+$(function() {
 	localStorage.setItem('status', null);
 	localStorage.setItem('log_hash', null);
+
+	setStatus("undefined");
+
+	$('#pause').hide();
+    $('#unpause').hide();
 
 	$('.resources').each(function() {
 		var i = $(this).attr('name').match(/\d+/)[0];

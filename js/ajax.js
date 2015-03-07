@@ -1,6 +1,6 @@
 function ajaxUpdate() {
     $.ajax({
-        url: 'ajax.php?bot=1&update=1',
+        url: 'ajax.php?update=1',
         complete: function(response) {
             update(response.responseText);
             setTimeout(ajaxUpdate, 1000);
@@ -9,13 +9,14 @@ function ajaxUpdate() {
 };
 
 function ajaxUpdateConfig() {
-    $.ajax('ajax.php?bot=1&config=1').done(
+    $.ajax('ajax.php?config=1').done(
         function(responseText) {
             $('#config_container').html(responseText);
         }
     );
 
-    $('#config_changed').hide();
+    $('#save').attr('class', 'menu inactive');
+    $('#undo').attr('class', 'menu inactive');
 };
 
 function update(responseText) {
@@ -24,38 +25,7 @@ function update(responseText) {
     if (localStorage.getItem('status') != response['status']) {
         localStorage.setItem('status', response['status']);
 
-        $('#status').show();
-        $('#controls').show().css('display', 'inline');
-
-        switch (response['status']) {
-            case "1":
-                $('#status').attr('src', 'img/online.png');
-
-                $('#unpause').hide();
-                $('#pause').show();
-
-                $('#online_controls').show().css('display', 'inline');
-                $('#offline_controls').hide();
-                break;
-
-            case "0":
-                $('#status').attr('src', 'img/offline.png');
-
-                $('#offline_controls').show();
-                $('#online_controls').hide();
-                break;
-
-            case "-1":
-                $('#status').attr('src', 'img/paused.png');
-
-                $('#unpause').show();
-                $('#pause').hide();
-
-                $('#online_controls').show().css('display', 'inline');
-                $('#offline_controls').hide();
-
-                break;
-        }
+        setStatus(response['status']);
     }
 
     if (localStorage.getItem('log_hash') != response['log_hash']) {
@@ -73,37 +43,39 @@ function update(responseText) {
 function ajaxSaveConfig() {
     $.ajax({
         type: 'POST',
-        url: 'ajax.php?bot=1&save_config=1', 
+        url: 'ajax.php?save_config=1', 
         data: $('#config_container').serialize()
     }).done( 
         function() {
-            $('#config_saved').show(2000).css('display', 'inline').fadeOut(1000);
-            $('#config_changed').hide();
+            $('#pop_up').show().fadeOut(2000);
+            $('#save').attr('class', 'menu inactive');
+            $('#undo').attr('class', 'menu inactive');
         }
     );
 };
 
-function ajaxRenderRow(i) {
-    $.ajax('ajax.php?bot=1&row={0}'.format(i)).done(function(responseText) {
+function ajaxRenderRow(i) { 
+    $.ajax('ajax.php?row={0}'.format(i)).done(function(responseText) {
         $('#buildings tr:last').after(responseText);
 
         $('#add_row_button').show();
         $('#adding_row').hide();
     });
-}
-
-function ajaxStartBot() {
-    $.ajax("ajax.php?bot=1&start=1");
 };
 
-function ajaxPauseBot() {
-    $.ajax("ajax.php?bot=1&pause=1");
-};
+function Bot() {
+    setStatus("undefined");
 
-function ajaxUnpauseBot() {
-    $.ajax("ajax.php?bot=1&pause=0");
-};
-
-function ajaxStopBot() {
-    $.ajax("ajax.php?bot=1&stop=1");
+    this.start = function() {
+        $.ajax("ajax.php?start=1");
+    };
+    this.stop = function() {
+        $.ajax("ajax.php?stop=1");
+    };
+    this.pause = function() {
+        $.ajax("ajax.php?pause=1");
+    };
+    this.unpause = function() {
+        $.ajax("ajax.php?pause=0");
+    };
 };
