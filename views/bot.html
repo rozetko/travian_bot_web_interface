@@ -15,38 +15,42 @@
 	</head>
 	<body>
 		<div id='menu'>
-			<img id='status' src='img/status.png'>
+			<div id='status'>
+				<img id='status_image' class="undefined" src='img/status.png'>
+			</div>
 			<div id='controls'>
-				<div id='offline_controls'>
-					<a href="#" onclick='ajaxStartBot();'><img class="menu" src="img/start.png"></a>
-				</div>
-				<div id='online_controls'>
-					<a href="#" onclick='ajaxStopBot();'><img class="menu" src="img/stop.png"></a>
-					<a href="#" id='pause' onclick='ajaxPauseBot();'><img class="menu" src="img/pause.png"></a>
-					<a href="#" id='unpause' onclick='ajaxUnpauseBot();'><img class="menu" src="img/start.png"></a>
-				</div>
+					<div id='start' class="menu">
+						<a href="#" onclick='new Bot().start();'><img src="img/start.png"></a>
+					</div>
+					<div id='pause' class="menu">
+						<a href="#" onclick='new Bot().pause();'><img src="img/pause.png"></a>
+					</div>
+					<div id='unpause' class="menu">
+						<a href="#" onclick='new Bot().unpause();'><img src="img/start.png"></a>
+					</div>
+					<div id='stop' class="menu">
+						<a href="#" onclick='new Bot().stop();'><img src="img/stop.png"></a>
+					</div>
+					<div class="menu inactive" id="save">
+						<a href='#' onclick='ajaxSaveConfig();'><img src="img/save.png"></a>
+					</div>
+					<div class="menu inactive" id="undo">
+						<a href='#' onclick='ajaxUpdateConfig();'><img src="img/undo.png"></a>
+					</div>
+					<div class="menu" id="undo">
+						<a href='#' onclick='ajaxUpdateConfig();'><img src="img/settings.png"></a>
+					</div>
 			</div>
 		</div>
 		<div id='main'>
 			<div id='left'>
-				<div id='config_changed'>
-					<a href='#' onclick='ajaxSaveConfig();'>Save</a> | 
-					<a href='#' onclick='ajaxUpdateConfig();'>Reset</a>
-
-				</div><div id='config_saved'>Config successfully saved</div>
-
 				<form id='config_container'>
 					{% include "config.html" %}
 				</form>
 			</div>
-			<div id='right'>
-				<div id='log_container'>
-					<h1><span>Log:</span></h1>
-					<div id='log'>
-						Loading...
-					</div>
-				</div>
-			</div>
+		</div>
+		<div id='pop_up'>
+			<div id='config_saved'>Config successfully saved</div>
 		</div>
 	</body>
-</html>
+</html>	

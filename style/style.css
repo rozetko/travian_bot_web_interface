@@ -76,18 +76,6 @@ input[name='server'], input[name='username'], input[name='password'] {
     margin-bottom: 15px;
 }
 
-#config_saved {
-    display: none;
-}
-
-#config_changed {
-    display: none;
-}
-
-#controls {
-    display: none;
-}
-
 #adding_row {
     display: none;
 }
@@ -97,9 +85,9 @@ input[name='server'], input[name='username'], input[name='password'] {
     height: 100%;
     width: 50px;
     text-align: center;
-    margin-right: 10px;
-    padding: 0;
+    margin-right: 15px;
     margin-top: -5px;
+    padding: 0;
 }
 
 body {
@@ -114,10 +102,85 @@ body {
 
 #status {
     width: 50px;
+    padding-top: 5px;
+    margin-bottom: 5px;
+}
+
+#status_image {
+    width: 50px;
     height: 50px;
 }
 
+#status_image.online {
+    content:url('/img/online.png');
+}
+
+#status_image.offline {
+    content:url('/img/offline.png');
+}
+
+#status_image.paused {
+    content:url('/img/paused.png');
+}
+
+#status_image.undefined {
+    content:url('/img/status.png');
+}
+
+#controls {
+    border-collapse: collapse;
+}
+
 .menu {
+    width: 50px;
+    height: 50px;
+    border-bottom: 1px solid #b9b6b6;
+}
+
+.menu > a > img {
+    padding-top: 2.5px;
     width: 45px;
     height: 45px;
+}
+
+.menu:hover {
+    background: #ebeaea;
+}
+
+.menu.inactive {
+    background: #ebeaea;
+    pointer-events: none;
+    cursor: default;
+}
+
+.menu > a > img {
+    width: 35px;
+    height: 35px;
+    padding-top: 7.5px;
+}
+
+#pop_up {
+    display: none;
+    background: #59B33C;
+    border-radius: 50px;
+    left: 40%;
+    top: 40%;
+    width: 300px;
+    height: 80px;
+    position: fixed;
+    text-align: center;
+}
+
+#pop_up:before, #config_saved {
+    display: inline-block;
+    vertical-align: middle;
+}
+
+#pop_up:before {
+    content: '';
+    display: inline-block;
+    width: 0;
+    height: 100%;
+    vertical-align: middle;
+    margin-left: -0.25em;
 }
