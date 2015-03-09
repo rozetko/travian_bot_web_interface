@@ -104,6 +104,10 @@ body {
     width: 50px;
     padding-top: 5px;
     margin-bottom: 5px;
+    background: url('/img/status.png');
+    background-size: 50px;
+    background-position: right 5px;
+    background-repeat: no-repeat;
 }
 
 #status_image {
@@ -124,7 +128,7 @@ body {
 }
 
 #status_image.undefined {
-    content:url('/img/status.png');
+    content:url('');
 }
 
 #controls {
