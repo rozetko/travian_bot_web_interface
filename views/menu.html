@@ -1,0 +1,23 @@
+<div id='status'>
+	<img id='status_image' class="undefined">
+</div>
+<div id='controls'>
+	<div id='start' class="menu">
+		<a href="#" onclick='new Bot().start();'><img src="img/start.png"></a>
+	</div>
+	<div id='pause' class="menu">
+		<a href="#" onclick='new Bot().pause();'><img src="img/pause.png"></a>
+	</div>
+	<div id='unpause' class="menu">
+		<a href="#" onclick='new Bot().unpause();'><img src="img/start.png"></a>
+	</div>
+	<div id='stop' class="menu">
+		<a href="#" onclick='new Bot().stop();'><img src="img/stop.png"></a>
+	</div>
+	<div class="menu inactive" id="save">
+		<a href='#' onclick='ajaxSaveConfig();'><img src="img/save.png"></a>
+	</div>
+	<div class="menu inactive" id="undo">
+		<a href='#' onclick='ajaxUpdateConfig();'><img src="img/undo.png"></a>
+	</div>
+</div>

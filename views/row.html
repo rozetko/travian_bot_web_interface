@@ -17,28 +17,28 @@
 			{% endif %}
 		>
 			<div>
-			<img src='img/r1.gif'><input type='checkbox' name='wood[{{ loop.index? loop.index: row_number }}]' 
+			<span class='res' id='r1'></span><input type='checkbox' name='wood[{{ loop.index? loop.index: row_number }}]' 
 				{% if building['wood'] %}
 					checked
 				{% endif %}
 			/>
 			</div>
 			<div>
-			<img src='img/r2.gif'><input type='checkbox' name='clay[{{ loop.index? loop.index: row_number }}]' 
+			<span class='res' id='r2'></span><input type='checkbox' name='clay[{{ loop.index? loop.index: row_number }}]' 
 				{% if building['clay'] %}
 					checked
 				{% endif %}
 			/>
 			</div>
 			<div>
-			<img src='img/r3.gif'><input type='checkbox' name='iron[{{ loop.index? loop.index: row_number }}]' 
+			<span class='res' id='r3'></span><input type='checkbox' name='iron[{{ loop.index? loop.index: row_number }}]' 
 				{% if building['iron'] %}
 					checked
 				{% endif %}
 			/>
 			</div>
 			<div>
-			<img src='img/r4.gif'><input type='checkbox' name='crop[{{ loop.index? loop.index: row_number }}]' 
+			<span class='res' id='r4'></span><input type='checkbox' name='crop[{{ loop.index? loop.index: row_number }}]' 
 				{% if building['crop'] %}
 					checked
 				{% endif %}
@@ -60,6 +60,6 @@
 		/>
 	</td>
 	<td class='remove'>
-		<a class='change' href='#row_{{ loop.index? loop.index: row_number }}' onclick='removeRow({{ loop.index? loop.index: row_number }});' alt='Remove'><img class='remove_sign' src='img/remove_sign.png'></a>
+		<a class='change' href='#row_{{ loop.index? loop.index: row_number }}' onclick='removeRow({{ loop.index? loop.index: row_number }});' alt='Remove'><img class='remove_sign' src='img/remove.png'></a>
 	</td>
 </tr>

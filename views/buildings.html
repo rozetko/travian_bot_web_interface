@@ -1,19 +1,27 @@
 <table id='buildings'>
-	<tr class="building">
-		<td>Village</td>
-		<td>Resources</td>
-		<td>Field ID</td>
-		<td>To</td>
-		<td>Skip</td>
-		<td class="remove"></td>
-	</tr>
-
-	{% for building in buildings %}
-		{% include "row.html" %}
-	{% endfor %}
+	<thead>
+		<tr class='building'>
+			<td>Village</td>
+			<td>Resources</td>
+			<td>Field ID</td>
+			<td>To</td>
+			<td>Skip</td>
+			<td class="remove"></td>
+		</tr>
+	</thead>
+	<tbody>
+		{% for building in buildings %}
+			{% include "row.html" %}
+		{% endfor %}
+		<tr class="building">
+			<td colspan="6">
+				<a class='change' id='add_row_button' href='#add_row_button' onclick='addRow();'>
+					<img id='add_sign' src='img/add.png'>
+				</a>
+			</td>
+		</tr>
+	</tbody>
 </table>
-
-<a class='change' id='add_row_button' href='#add_row_button' onclick='addRow();'><img id='add_sign' src='img/add_sign.png'></a>
 
 <!-- Progress: -->
 <div id='adding_row'>

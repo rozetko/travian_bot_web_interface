@@ -29,8 +29,8 @@ function showConfigChanged() {
 function addRow() {
 	var i;
 
-	var lastRow = $('#buildings tr:last');
-	if (lastRow.attr('class') == 'building') {
+	var lastRow = $('#buildings tbody tr:nth-last-child(2)');
+	if (lastRow.length) {
 		i = parseInt(lastRow.attr('id').match(/\d+/)[0]) + 1;
 	}
 	else {

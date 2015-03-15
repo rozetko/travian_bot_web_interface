@@ -4,100 +4,17 @@ a:hover, a:visited, a:link, a:active
     color: #99C01A;
 }
 
-div h1 {
-    text-align: center;
-    margin-top: -10px;
-    height: 20px;
-    line-height: 20px;
-    font-size: 15px;
-}
-
-div h1 span {
-    background-color: white;
-}
-
-#right {
-    float: right; 
-    width: 54%;
-}
-
-#left {
-    float: left; 
-    width: 46%;
-}
-
-#log_container {
-	border: 1px solid #C9C9C9;
-    margin-top: 2px;
-    padding-left: 2px;
-}
-
 input[type=number] {
     width: 3em;
 }
 
-.remove_sign {
-    width: 20px;
-    height: 20px;
-}
-
-#add_sign {
-    width: 25px;
-    height: 25px;
-    margin-top: 5px;
-}
-
-#buildings {
-    empty-cells: show;
-    border-collapse: collapse;
-    text-align: center;
-    margin-top: 15px;
-}
-
-.building > td:not(.remove) {
-    border: 1px solid #C9C9C9;
-    padding: 7px 5px 7px 5px;
-}
-
-.remove {
-    padding-left: 5px;
-    padding-top: 7px;
-}
-
-#build {
-    margin-top: 15px;
-}
-
-input[name='server'], input[name='username'], input[name='password'] {
-    margin-top: 5px;
-}
-
-.input {
-    margin-bottom: 15px;
-}
-
-#adding_row {
-    display: none;
-}
-
-#menu {
-    position: fixed;
-    height: 100%;
-    width: 50px;
-    text-align: center;
-    margin-right: 15px;
-    margin-top: -5px;
-    padding: 0;
-}
-
 body {
     margin: 0;
-    padding: 0;
-}
-
-#main {
-    margin-top: 5px;
-    margin-left: 55px; 
+    padding-top: 5px;
+    background: #e6e6e6;
+    font-family: verdana;
+    font-size: 11pt; 
+    width: 100%;
 }
 
 #status {
@@ -135,6 +52,21 @@ body {
     border-collapse: collapse;
 }
 
+#menu {
+    position: fixed;
+    height: 100%;
+    width: 50px;
+    text-align: center;
+    margin-right: 15px;
+    margin-top: -5px;
+    padding: 0;
+    background: white;
+    border-right: 1px solid #b9b6b6;
+    -webkit-box-shadow: 3px 0px 5px 0px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    3px 0px 5px 0px rgba(50, 50, 50, 0.3);
+    box-shadow:         3px 0px 5px 0px rgba(50, 50, 50, 0.3);
+}
+
 .menu {
     width: 50px;
     height: 50px;
@@ -163,28 +95,116 @@ body {
     padding-top: 7.5px;
 }
 
-#pop_up {
-    display: none;
-    background: #59B33C;
-    border-radius: 50px;
-    left: 40%;
-    top: 40%;
-    width: 300px;
-    height: 80px;
-    position: fixed;
+#main {
     text-align: center;
-}
-
-#pop_up:before, #config_saved {
-    display: inline-block;
-    vertical-align: middle;
-}
-
-#pop_up:before {
-    content: '';
-    display: inline-block;
-    width: 0;
+    position: relative;
+    width: 600px;
+    margin: 0px auto;
+    
+    height: auto !important;
     height: 100%;
+    min-height: 100%;
+}
+
+#buildings {
+    position: relative;
+    empty-cells: show;
+    border-collapse: collapse;
+    text-align: center;
+    margin: 5%;
+    background: white;
+    width: 90%;
+}
+
+.building > td {
+    border: 1px solid #C9C9C9;
+    padding: 7px 5px 7px 5px;
+}
+
+.remove_sign {
+    width: 25px;
+    height: 25px;
+    margin-top: 3px;
+}
+
+#add_sign {
+    width: 25px;
+    height: 25px;
+    margin-top: 5px;
+}
+
+#adding_row {
+    display: none;
+}
+
+#build {
+    margin-top: 15px;
+}
+
+input[name='server'], input[name='username'], input[name='password'] {
+    margin-top: 5px;
+}
+
+.input {
+    margin-bottom: 15px;
+}
+
+#footer_placeholder {
+    height: 20px;
+}
+
+#footer {
+    position: relative;
+    height: 20px;
+    margin-top: -21px;
+
+    line-height: 20px;
     vertical-align: middle;
-    margin-left: -0.25em;
+
+    width: 100%;
+    text-align: center;
+    font-size: 7pt;
+}
+
+#github_logo {
+    width: 10px;
+    height: 10px;
+}
+
+#sign_out {
+    width: 100px;
+    height: 20px;
+    float: right;
+    vertical-align: middle;
+}
+
+#sign_out_logo {
+    width: 20px;
+    height: 20px;
+    margin-right: 12px;
+    float: right;
+}
+
+.res {
+    width: 18px;
+    height: 14px;
+
+    background: url('/img/res.png');
+    display: inline-block;
+}
+
+#r1 {
+    background-position: 0px 0px; 
+}
+
+#r2 {
+    background-position: 0px -21px; 
+}
+
+#r3 {
+    background-position: 0px -44px;
+}
+
+#r4 {
+    background-position: 0px -64px; 
 }

@@ -15,42 +15,21 @@
 	</head>
 	<body>
 		<div id='menu'>
-			<div id='status'>
-				<img id='status_image' class="undefined">
-			</div>
-			<div id='controls'>
-					<div id='start' class="menu">
-						<a href="#" onclick='new Bot().start();'><img src="img/start.png"></a>
-					</div>
-					<div id='pause' class="menu">
-						<a href="#" onclick='new Bot().pause();'><img src="img/pause.png"></a>
-					</div>
-					<div id='unpause' class="menu">
-						<a href="#" onclick='new Bot().unpause();'><img src="img/start.png"></a>
-					</div>
-					<div id='stop' class="menu">
-						<a href="#" onclick='new Bot().stop();'><img src="img/stop.png"></a>
-					</div>
-					<div class="menu inactive" id="save">
-						<a href='#' onclick='ajaxSaveConfig();'><img src="img/save.png"></a>
-					</div>
-					<div class="menu inactive" id="undo">
-						<a href='#' onclick='ajaxUpdateConfig();'><img src="img/undo.png"></a>
-					</div>
-					<div class="menu" id="undo">
-						<a href='#' onclick='ajaxUpdateConfig();'><img src="img/settings.png"></a>
-					</div>
-			</div>
+			{% include "menu.html" %}
+		</div>
+		<div id='sign_out'>
+			<a href='#'>Sign out <img src='img/sign_out.png' id='sign_out_logo'></a>
 		</div>
 		<div id='main'>
-			<div id='left'>
+			<div id='content'>
 				<form id='config_container'>
 					{% include "config.html" %}
 				</form>
 			</div>
+			<div id="footer_placeholder"></div>
 		</div>
-		<div id='pop_up'>
-			<div id='config_saved'>Config successfully saved</div>
+		<div id='footer'>
+			Made by <a href='https://github.com/rozetko'>rozetko <img src='img/github.png' id='github_logo'></a>
 		</div>
 	</body>
 </html>	

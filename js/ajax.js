@@ -56,7 +56,7 @@ function ajaxSaveConfig() {
 
 function ajaxRenderRow(i) { 
     $.ajax('ajax.php?row={0}'.format(i)).done(function(responseText) {
-        $('#buildings tr:last').after(responseText);
+        $('#buildings tbody tr:last').before(responseText);
 
         $('#add_row_button').show();
         $('#adding_row').hide();
