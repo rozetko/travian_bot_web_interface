@@ -8,9 +8,13 @@ input[type=number] {
     width: 3em;
 }
 
+html {
+    position: relative;
+    min-height: 100%;
+}
+
 body {
-    margin: 0;
-    padding-top: 5px;
+    margin: 0 0 10px;
     background: #e6e6e6;
     font-family: verdana;
     font-size: 11pt; 
@@ -58,13 +62,12 @@ body {
     width: 50px;
     text-align: center;
     margin-right: 15px;
-    margin-top: -5px;
     padding: 0;
     background: white;
     border-right: 1px solid #b9b6b6;
-    -webkit-box-shadow: 3px 0px 5px 0px rgba(50, 50, 50, 0.3);
-    -moz-box-shadow:    3px 0px 5px 0px rgba(50, 50, 50, 0.3);
-    box-shadow:         3px 0px 5px 0px rgba(50, 50, 50, 0.3);
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.5);
 }
 
 .menu {
@@ -95,17 +98,6 @@ body {
     padding-top: 7.5px;
 }
 
-#main {
-    text-align: center;
-    position: relative;
-    width: 600px;
-    margin: 0px auto;
-    
-    height: auto !important;
-    height: 100%;
-    min-height: 100%;
-}
-
 #buildings {
     position: relative;
     empty-cells: show;
@@ -114,6 +106,9 @@ body {
     margin: 5%;
     background: white;
     width: 90%;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.3);
+    -moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.3);
+    box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.3);
 }
 
 .building > td {
@@ -149,40 +144,40 @@ input[name='server'], input[name='username'], input[name='password'] {
     margin-bottom: 15px;
 }
 
-#footer_placeholder {
-    height: 20px;
-}
-
-#footer {
-    position: relative;
-    height: 20px;
-    margin-top: -21px;
-
-    line-height: 20px;
-    vertical-align: middle;
-
-    width: 100%;
-    text-align: center;
-    font-size: 7pt;
-}
-
 #github_logo {
     width: 10px;
     height: 10px;
 }
 
 #sign_out {
-    width: 100px;
-    height: 20px;
+    width: 130px;
+    height: 50px;
     float: right;
-    vertical-align: middle;
+    background: white;
+    border: 1px solid #b9b6b6;
+    border-top: 0;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.5);
+    margin-right: 10px;
+}
+
+#sign_out a p {
+    margin-left: 13px;
+    vertical-align: middle; 
+    display: inline-block;
 }
 
 #sign_out_logo {
-    width: 20px;
-    height: 20px;
-    margin-right: 12px;
+    vertical-align: top;
     float: right;
+    width: 35px;
+    height: 35px;
+    margin: 6px 10px 0 0;
+}
+
+#sign_out:hover {
+    background: #ebeaea;
 }
 
 .res {
@@ -207,4 +202,36 @@ input[name='server'], input[name='username'], input[name='password'] {
 
 #r4 {
     background-position: 0px -64px; 
+}
+
+#content {
+    text-align: center;
+    position: relative;
+    width: 600px;
+    margin: auto;
+}
+
+#villages {
+    float: right;
+    width: 130px;
+    height: 100px;
+    background: white;
+    border: 1px solid #b9b6b6;
+    -webkit-box-shadow: 4px 4px 5px 0px rgba(50, 50, 50, 0.5);
+    -moz-box-shadow:    4px 4px 5px 0px rgba(50, 50, 50, 0.5);
+    box-shadow:         4px 4px 5px 0px rgba(50, 50, 50, 0.5);
+    margin-top: auto;
+    margin-right: 10px;
+}
+
+footer {
+    position: absolute;
+    left: 0;
+    bottom: 0;
+    height: 20px;
+
+    width: 100%;
+
+    text-align: center;
+    font-size: 7pt;
 }
